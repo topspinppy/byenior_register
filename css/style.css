@@ -1,0 +1,79 @@
+
+ิbody 
+{
+    color: white;
+    font-family: 'Mitr', sans-serif;
+}
+.bgfirstsection
+{
+    background-repeat: no-repeat;
+    background-image:url("http://wallpaper-gallery.net/images/light-red-wallpaper/light-red-wallpaper-16.jpg");
+    background-size:cover;
+    background-position: center center;
+    min-height: 100vh;
+    visibility: inherit;
+    z-index: 20;
+    margin: 0px;   
+    padding: 50px 0;
+}
+
+.bgsecondsection
+{
+    background-color: #4682b4;
+    background-size: cover;
+    background-position: center center;
+    min-height: 50vh;
+}
+.bgthirdsection
+{
+    background-color: chartreuse;
+    background-size: cover;
+    background-position: center center;
+    min-height: 50vh;
+}
+.headerfont
+{
+    font-size: 6.2em;
+    padding-top: calc(20px + 20vh);
+}
+
+.headsecond
+{
+    padding:7vh;
+}
+
+#introdate
+{
+    font-size: 1.6rem;
+}
+
+.headtext{
+    font-size: 100%;
+    animation-name: head;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#text2{
+    animation-delay: 2s;
+}
+
+@keyframes head {
+    0% {font-size:100%; opacity:1;}
+    50% {font-size:0; opacity:0;}
+    100% {font-size:100%;opacity:1;}
+}
+
+.bgfirstsection video {
+    position: absolute;
+    min-height: auto;
+    min-width: 100%;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -100;
+    width: 100%;
+    height: auto;
+
+  }
