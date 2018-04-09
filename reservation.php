@@ -221,6 +221,9 @@
                         <td width="12.5%">
                             <div class="image">
                                 <figure>
+                                    <?php
+                                    $sql = "SELECT * FROM booktype join (SELECT * FROM `booked` join tables using (table_id)) as a using (booktype_id)";
+                                    ?>
                                     <a href="step/index.php?id=7">
                                         <input type="image" src="img/table/empty.png" class="img-responsive" name="button">
                                     </a>

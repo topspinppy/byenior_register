@@ -61,11 +61,12 @@
             <script>
                 $.ajax({
 				   type: "POST",
-				   url: "member_single.php",
+				   url: "db/membersingle.php",
 				   cache: false,
-				   data: "name=John&location=Boston",
+				   data: "bookid=<?php echo $id; ?>",
 				   success: function(msg){
-					 $("#member").append(msg);
+                        $("#member").append(msg);
+                        console.log(msg);
 				   }
 				 });
             </script>

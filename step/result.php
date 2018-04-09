@@ -14,13 +14,14 @@
         $bookedquery = "insert into booked value (null,'$tableid','$typeid')";
         if(mysqli_query($connect,$bookedquery))
         {
-            $idbooked = "select * from booked";
+            $idbooked = "select * from booked ORDER BY book_id DESC limit 1";
             $querybooked = mysqli_query($connect,$idbooked);
             $result = mysqli_fetch_array($querybooked,MYSQLI_ASSOC);
             $idbookquery = $result["book_id"];
+            $tableid = $result["table_id"];
 
             $studentquery = "insert into student value ('$stdid','$name','$surname','$email','$year','$idbookquery','waitpay')";
-            $tablequery = "insert into tables value ('$tableid','notfull')";
+            $tablequery = "update tables SET table_status = 'notempty' WHERE table_id ='$tableid'";
             if(mysqli_query($connect, $tablequery) && mysqli_query($connect,$studentquery))
             {
                 echo "complete";
