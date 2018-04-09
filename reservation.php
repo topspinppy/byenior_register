@@ -131,7 +131,7 @@
 <body>
     <nav class="navbar navbar-dark bg-primary">
         <a class="navbar-brand" href="#">
-            <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            
             GOODBYE SENIOR IT'16
         </a>
     </nav>
@@ -221,7 +221,9 @@
                         <td width="12.5%">
                             <div class="image">
                                 <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(7);">
+                                    <a href="step/index.php?id=7">
+                                        <input type="image" src="img/table/empty.png" class="img-responsive" name="button">
+                                    </a>
                                     <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
                                     <span class="ttt" style="pointer-events: none;">7</span>
                                 </figure>
