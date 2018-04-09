@@ -8,17 +8,15 @@
         include("../header.php");
     ?>
         <?php
-            if(isset($_POST["table"]))
+            if(isset($_POST["id_student"]))
             {
-                
-                if($_POST["table"] == "single")
-                {
-                    header( "location: single.php?type=single&id=$id" );
-                }
-                else if($_POST["table"] == "all")
-                {
-                    header( "location: all.php?type=all&id=$id");
-                }
+                $idstudent = @$_POST["id_student"];
+                $name_student = @$_POST["name_student"];
+                $surname_student = @$_POST["surname_student"];
+                $year_student = @$_POST["year_student"];
+                $email_student = @$_POST["email_student"];
+
+                header( "location: result.php?type=single&tableid=$id&stdid=$idstudent&name=$name_student&surname=$surname_student&year=$year_student&email=$email_student" );
             }
         ?>
             <div class="container" style="padding:50px;">
@@ -27,7 +25,7 @@
                     โต๊ะที่ <?php echo $_GET["id"]; ?> | ประเภทเดี่ยว
                 </div>
                 <div class="card-body">
-                    <form action="index.php?id=<?php echo $_GET['id'];?>" method="post">
+                    <form action="single.php?id=<?php echo $_GET['id'];?>" method="post">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">รหัสประจำตัวนักศึกษา</label>
                                 <input type="number" class="form-control" name="id_student" id="exampleFormControlInput1" placeholder="ตัวอย่าง : 5806021600000" required>
@@ -42,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">ชั้นปี</label>
-                                <select multiple class="form-control" id="exampleFormControlSelect2" required>
+                                <select multiple class="form-control" name="year_student" id="exampleFormControlSelect2" required>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -50,16 +48,27 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">อีเมล์</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                                <input type="email" class="form-control" name="email_student" id="exampleFormControlInput1" placeholder="name@example.com" required>
                             </div>
                         <button type="submit" class="btn btn-outline-success">ถัดไป</button>
                     </form>
                     <hr>
                     สมาชิกโต๊ะล่าสุด คุณเป็นคนที่ 
-
+                    <span id="member"></span>
                 </div> 
                 </div>
             </div>
+            <script>
+                $.ajax({
+				   type: "POST",
+				   url: "member_single.php",
+				   cache: false,
+				   data: "name=John&location=Boston",
+				   success: function(msg){
+					 $("#member").append(msg);
+				   }
+				 });
+            </script>
 <?php
     }
     else
