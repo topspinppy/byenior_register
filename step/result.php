@@ -20,7 +20,7 @@
             $idbookquery = $result["book_id"];
             $tableid = $result["table_id"];
 
-            $studentquery = "insert into student value ('$stdid','$name','$surname','$email','$year','$idbookquery','waitpay')";
+            echo $studentquery = "insert into student value ('$stdid','$name','$surname','$email','$year','$idbookquery','waitpay')";
             $tablequery = "update tables SET table_status = 'notempty' WHERE table_id ='$tableid'";
             if(mysqli_query($connect, $tablequery) && mysqli_query($connect,$studentquery))
             {

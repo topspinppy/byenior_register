@@ -13,12 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://joaopereirawd.github.io/fakeLoader.js/demo/css/fakeLoader.css">
+    <script src="http://joaopereirawd.github.io/fakeLoader.js/demo/js/fakeLoader.min.js"></script>
     <script>
         var easeInOutQuart = new SmoothScroll('[data-easing="easeInOutQuart"]', {easing: 'easeInOutQuart'});
+
+
+        $(document).ready(function(){
+                $(".fakeloader").fakeLoader({
+                    timeToHide:1200,
+                    bgColor:"#34495e",
+                    spinner:"spinner3"
+                });
+        });
+
     </script>
     <title>Document</title>
 </head>
 <body style="font-family: 'Prompt', sans-serif;">
+  
     <div id="fullpage">
         <div class="section">
             <div class="bgfirstsection">

@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^byenior/reservation.php$ byenior/reservation [R]
+ 

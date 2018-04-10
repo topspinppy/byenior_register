@@ -32,13 +32,13 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="table" id="" value="single">
                                 <label class="form-check-label" for="exampleRadios1">
-                                    จองโต๊ะเดี่ยว
+                                    จองโต๊ะเดี่ยว (1 คน)
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="table" id="" value="all">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    จองโต๊ะเหมา
+                                    จองโต๊ะเหมา (10 ที่นั่ง)
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-outline-success">ถัดไป</button>

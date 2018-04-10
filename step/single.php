@@ -65,7 +65,7 @@
 				   cache: false,
 				   data: "bookid=<?php echo $id; ?>",
 				   success: function(msg){
-                        $("#member").append(msg);
+                        $("#member").append("<br>"+msg +"<br>");
                         console.log(msg);
 				   }
 				 });

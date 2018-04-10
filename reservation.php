@@ -8,7 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
-
+    <?php
+        include("connect.php");
+    ?>
     <title>Document</title>
     <style media="screen">
   .image{
@@ -216,200 +218,92 @@
                             </div>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <?php
-                                    $sql = "SELECT * FROM booktype join (SELECT * FROM `booked` join tables using (table_id)) as a using (booktype_id)";
-                                    ?>
-                                    <a href="step/index.php?id=7">
-                                        <input type="image" src="img/table/empty.png" class="img-responsive" name="button">
-                                    </a>
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">7</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(8);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">8</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(9);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">9</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(10);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">10</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(11);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">11</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(12);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">12</span>
-                                </figure>
-                            </div>
-                        </td>
-                    </tr>
                     
-                    <tr>                
+                    <?php
+                    $k = 7;
+                    for($i = 0 ; $i < 3 ; $i++)
+                    {
+                    ?>
+                    <tr>
+                        <?php
+                        for($j = 0 ; $j < 6 ; $j++)
+                        {
+                        ?>
                         <td width="12.5%">
                             <div class="image">
                                 <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(13);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">13</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(14);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">14</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(15);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">15</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(16);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">16</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(17);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">17</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button"  onclick="edit(18);">
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">18</span>
-                                </figure>
-                            </div>
-                        </td>
-                    </tr>
+                                <?php
+                                        $sql7 = "select * from tables where table_id='$k'";
+                                        $sqlquery7 = mysqli_query($connect,$sql7);
+                                        $result7 = mysqli_fetch_array($sqlquery7,MYSQLI_ASSOC);
+                                        if($result7["table_status"] == "notempty")
+                                        {
+                                    ?>
+                                            <?php
+                                                $sqlcount7 = "SELECT count(*) as tablecount FROM `booked` WHERE `table_id` = $k";
+                                                $sqlquerycount7 = mysqli_query($connect,$sqlcount7);
+                                                $resultcount7 = mysqli_fetch_array($sqlquerycount7,MYSQLI_ASSOC);
+                                                $count = $resultcount7["tablecount"];
 
-                    <tr>                
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button" >
+                                                if($count == "10")
+                                                {
+                                            ?>
+                                                    <input type="image" src="img/table/success.png" class="img-responsive" name="button">  
+                                            <?php
+                                                }
+                                                else
+                                                {
+                                            ?>
+                                                    <a href="step/single.php?id=<?php echo $k; ?>">
+                                                        <input type="image" src="img/table/not_full.png" class="img-responsive" name="button">
+                                                    </a>
+                                            <?php
+                                                }
+                                            ?>
+                                    <?php
+                                        }
+                                        else if($result7["table_status"] == "full")
+                                        {
+                                    ?>   
+                                            <input type="image" src="img/table/success.png" class="img-responsive" name="button">  
+                                    <?php
+                                        }
+                                        else
+                                        {
+                                    ?> 
+                                            <a href="step/index.php?id=<?php echo $k; ?>">
+                                                <input type="image" src="img/table/empty.png" class="img-responsive" name="button">
+                                            </a>
+                                    <?php
+                                        }
+                                    ?>
                                     <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">19</span>
+                                    <span class="ttt" style="pointer-events: none;"><?php echo $k; ?></span>
                                 </figure>
                             </div>
                         </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button" >
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">20</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button" >
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">21</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            blank
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" name="button" >
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">22</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" value="23" name="button" >
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">23</span>
-                                </figure>
-                            </div>
-                        </td>
-                        <td width="12.5%">
-                            <div class="image">
-                                <figure>
-                                    <input type="image" src="img/table/empty.png" class="img-responsive" value="24" name="button" >
-                                    <span class="tt" style="pointer-events: none;">โต๊ะที่</span>
-                                    <span class="ttt" style="pointer-events: none;">24</span>
-                                </figure>
-                            </div>
-                        </td>
+                       
+                        <?php
+                            
+                            if($j == "2")
+                            {
+                        ?>
+                                <td width="12.5%">
+                                    blank
+                                </td>
+                                <td width="12.5%">
+                                    blank
+                                </td>
+                        <?php
+                            }
+                            $k++;
+                        }
+                        ?>
+                        <br>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
     </div>
